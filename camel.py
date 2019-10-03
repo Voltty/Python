@@ -86,14 +86,6 @@ while sd or cs >= 0  :
         print('Meus parabens!!')
         print('==========')
         break
-        
-    elif km >= 200:
-        print('==========')
-        print('Você ganhou!!!')
-        print('==========')
-        print('Meus parabens!!')
-        print('==========')
-        break
 
     if sd > 4:
         print('Você esta com sede')
