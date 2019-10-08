@@ -1,6 +1,6 @@
 import random
 
-print('.\n.\n.')
+print('=========='*8)
 print('Bem-vindo ao Camel!')
 print('Sobreviva ao deserto e escape do dono do camelo.')
 print('Você roubou um camelo para atravessar o grande deserto de Mobi.')
@@ -14,11 +14,11 @@ cs = 0 #cansaço
 kmdn = -20 #km dono
 cantil = 3
 fim = 'fim'
+vazio = ''
 
 
 while sd or cs >= 0  :
     kmt = km - kmdn
-    
     print('A. Beber água do cantil.')
     print('B. Avançar com velocidade moderada.')
     print('C. Avançar com velocidade máxima.')
@@ -31,21 +31,21 @@ while sd or cs >= 0  :
 
     print('.\n.\n.')
 
-    if escolha1 == "q" :#Q. Sair.
-        print('você saiu')
+    if escolha1 == 'q' :#Q. Sair.
+        print('Você saiu do jogo!!!')
         break
 
     elif escolha1 == 'e' :#E. Checar o status.
         print(f'Quilômetros percorridos: {km}')
         print('.')
-        print(f'água no cantil: {cantil}')
+        print(f'Água no cantil: {cantil}')
         print('.')
-        print(f'{kmt}km de distancia do dono')
+        print(f'{kmt}km de distancia do dono.')
         print('.')
 
     elif escolha1 == 'd' :#D. Parar para dencansar à noite.
         cs = 0
-        print('Seu camelo esta revigorado')
+        print('Seu camelo esta revigorado.')
         print('.')
         andou_d = random.randint(7, 14)
         kmdn = kmdn + andou_d
@@ -57,7 +57,7 @@ while sd or cs >= 0  :
         sd = sd + 1
         andou_d = random.randint(7, 14)
         kmdn = kmdn + andou_d
-        print(f'Você andou {andou}km')
+        print(f'Você andou {andou}km.')
         print('.')
 
     elif escolha1 == 'b':#B. Avançar com velocidade moderada.
@@ -67,7 +67,7 @@ while sd or cs >= 0  :
         kmdn = kmdn + andou_d
         sd = sd + 1
         cs = cs + 1
-        print(f"Você andou {andou}km")
+        print(f"Você andou {andou}km.")
         print('.')
 
     elif escolha1 == 'a':#A. Beber água do cantil.
@@ -75,57 +75,57 @@ while sd or cs >= 0  :
             
             cantil = cantil - 1
             sd = 0
-            print('Você esta hidratado')
+            print('Você esta hidratado.')
             print('.')
 
         else:
-            print('Você não tem agua no cantil')
+            print('Você não tem agua no cantil.')
             print('.')
 
-    if escolha1 == 'b' or 'c':
+    if km >= 200:#ganhar
+        print('================')
+        print('Você ganhou!!!')
+        print('================')
+        print('Meus parabens!!!')
+        print('================')
+        break
+
+    if escolha1 == 'b' or 'c':#chance de oasis
         oasis_c = random.randint(1,20)
         if oasis_c == 10:
-            print('Você achou um oasis')
+            print('Você achou um oasis!')
             print('.')
             sd = 0 
             cs = 0
-            print('Sua sede e cansaço estão restaurados')
-            osasis_c == 0
+            print('Sua sede e cansaço foram restaurados!!')
+            oasis_c == 0
 
-    elif km >= 200:
-        print('=============')
-        print('Você ganhou!!!')
-        print('==========')
-        print('Meus parabens!!')
-        print('=============')
-        break
-
-    if sd > 4:
-        print('Você esta com sede')
+    if sd > 4:#aviso
+        print('Você esta com sede!!')
         print('.')
 
-    if cs > 5:
-        print("Seu camelo esta cansado")
+    if cs > 5:#aviso
+        print("Seu camelo esta cansado!!")
         print('.')
 
-    if kmt <= 15:
-         print('O dono se aproxima')
+    if kmt <= 15:#aviso
+         print('O dono se aproxima!!!')
          print('.')
 
-    elif sd > 6:
-        print('=============')
+    if sd > 6:#perder
+        print(f'{vazio:=^20}')
         print('Você morreu de sede!')
         print(f'{fim:=^20}')
         break
 
-    elif cs > 8:
-        print('=============')
+    if cs > 8:#perder
+        print(f'{vazio:=^20}')
         print('Seu camelo morreu de cansaço!')
-        print(f'{fim:=^13}')
+        print(f'{fim:=^20}')
         break
 
-    elif kmt == 0:
-        print('=============')
+    if kmt <= 0:#perder
+        print(f'{vazio:=^20}')
         print('O dono te pegou!')
-        print(f'{fim:=^13}')
+        print(f'{fim:=^20}')
         break
