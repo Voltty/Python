@@ -13,11 +13,12 @@ sd = 0 #sede
 cs = 0 #cansaço
 kmdn = -20 #km dono
 cantil = 3
-
+fim = 'fim'
 
 
 while sd or cs >= 0  :
     kmt = km - kmdn
+    
     print('A. Beber água do cantil.')
     print('B. Avançar com velocidade moderada.')
     print('C. Avançar com velocidade máxima.')
@@ -27,6 +28,7 @@ while sd or cs >= 0  :
     print('.\n.\n.')
 
     escolha1 = str(input('Qual sua escolha? '))
+
     print('.\n.\n.')
 
     if escolha1 == "q" :#Q. Sair.
@@ -67,24 +69,35 @@ while sd or cs >= 0  :
         cs = cs + 1
         print(f"Você andou {andou}km")
         print('.')
-    elif escolha1 == 'a':#A. Beber água do cantil.
 
+    elif escolha1 == 'a':#A. Beber água do cantil.
         if cantil >= 1:
             
             cantil = cantil - 1
             sd = 0
             print('Você esta hidratado')
             print('.')
+
         else:
             print('Você não tem agua no cantil')
             print('.')
-            
+
+    if escolha1 == 'b' or 'c':
+        oasis_c = random.randint(1,20)
+        if oasis_c == 10:
+            print('Você achou um oasis')
+            print('.')
+            sd = 0 
+            cs = 0
+            print('Sua sede e cansaço estão restaurados')
+            osasis_c == 0
+
     elif km >= 200:
-        print('==========')
+        print('=============')
         print('Você ganhou!!!')
         print('==========')
         print('Meus parabens!!')
-        print('==========')
+        print('=============')
         break
 
     if sd > 4:
@@ -98,23 +111,21 @@ while sd or cs >= 0  :
     if kmt <= 15:
          print('O dono se aproxima')
          print('.')
-    
+
     elif sd > 6:
-        print('==========')
-        print('Você morreu de sede')
-        print('==========')
+        print('=============')
+        print('Você morreu de sede!')
+        print(f'{fim:=^20}')
         break
 
     elif cs > 8:
-        print('==========')
-        print('Seu camelo morreu')
-        print('==========')
+        print('=============')
+        print('Seu camelo morreu de cansaço!')
+        print(f'{fim:=^13}')
         break
 
     elif kmt == 0:
-        print('==========')
-        print('O dono te pegou')
-        print('==========')
+        print('=============')
+        print('O dono te pegou!')
+        print(f'{fim:=^13}')
         break
-    
-    
