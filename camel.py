@@ -13,6 +13,7 @@ sd = 0 #sede
 cs = 0 #cansaço
 kmdn = -20 #km dono
 cantil = 3
+d = 5
 fim = 'fim'
 vazio = ''
 
@@ -46,9 +47,9 @@ while sd or cs >= 0  :
     elif escolha1 == 'd' :#D. Parar para dencansar à noite.
         cs = 0
         print('Seu camelo esta revigorado.')
-        print('.')
         andou_d = random.randint(7, 14)
         kmdn = kmdn + andou_d
+        print('.')
 
     elif escolha1 == 'c' :#C. Avançar com velocidade máxima.
         andou = random.randint(10, 20)
@@ -91,14 +92,28 @@ while sd or cs >= 0  :
         break
 
     if escolha1 == 'b' or 'c':#chance de oasis
-        oasis_c = random.randint(1,20)
-        if oasis_c == 10:
+        sorte = random.randint(1,20)
+        if sorte == 10:
             print('Você achou um oasis!')
             print('.')
             sd = 0 
             cs = 0
             print('Sua sede e cansaço foram restaurados!!')
-            oasis_c == 0
+            sorte == 0
+
+        if sorte == 15:
+            preço_agua = random.randint(1,5)
+            comprar = str(input(f'Você achou uma pessoa vendendo um cantil com água, vendendo por {preço_agua}. Você quer comprar? s/n'))
+            if comprar == "s" and d >= preço_agua:
+                print('Pegue essa água')
+                d = d - preço_agua
+                cantil = cantil + 3
+                print('.')
+                print('Agora você deixa o vendedor e volta para a fuga')
+
+
+
+
 
     if sd > 4:#aviso
         print('Você esta com sede!!')
