@@ -44,25 +44,50 @@ for l in palavra:
 	nova_p =n_p + n_l
 print(n_p)
 
-
-#exercicio
+##########exercicio######
 #1
 
-palavra = str(input('Coloque uma paravra: '))
-for i in palavra:
-	cod = ord(i)
-	cod1 = chr(cod)
-	print(cod1)
+#palavra = str(input('Coloque uma paravra: '))
+#for i in palavra:
+#	print(i)
 
 
 #2
+#palavra2 = str(input("Coloque outra palavra: "))
+#nova_palavra = ''
 
-palavra2 = str(input("Coloque uma palavra: "))
-for i2 in palavra2:
-    code = ord(i2)
-    code1 = chr(code)
-    pa = p + code1
-    print(pa)
+#for letra in palavra2:
+#	nova_palavra = nova_palavra + letra
+#
+#	print(nova_palavra)
+
+
+
+#3
+palavra3 = str(input("Coloque outra palavra: "))
+nova_palavra = ''
+contador = 0
+
+for letra in palavra3:
+	nova_palavra = nova_palavra + letra
+	contador = contador + 1
+	if contador%2 == 0:
+		print(nova_palavra.upper())
+	elif contador%2 != 0:
+		print(nova_palavra)
+
+#4
+palavra4 = str(input("Coloque outra palavra: "))
+
+
+for letra in palavra4:
+	print(letra.replace("a", "4"))
+	print(letra.replace("e", "3"))
+	print(letra.replace("i", "1"))
+	print(letra.replace("t", "7"))
+	print(letra)
+
+
 
 
 
