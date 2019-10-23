@@ -46,15 +46,7 @@ else:
 
 
 
-p1 = int(Input('Coloque a 1º nota : '))
-p2 = int(Input('Coloque a 2º nota : '))
-p3 = int(Input('Coloque a 3º nota : '))
 
-m = (p1 + p2 + p3) / 3
-
-if media >= 7:
-	print('Você foi aprovado!!')
-elif:
 	
 
 
