@@ -1,4 +1,4 @@
-
+#####gadometro#####
 
 cris = int(input('coloque um numero: '))  
 luiz = int(input('coloque outro numero: ')) 
@@ -21,12 +21,11 @@ elif s == -6 or s == -8 :
 elif s == -10  or s == 8 :
     print('Gadissimo invertido')
 elif s == 6 or s == 10 :
-    print('Você joga LOL, LOl caralho!!')
+    print('Você joga LOL, LOl caramba!!')
 elif s == 7 or s == -9 :
     print('gado')
 else:
     print('Você é troxa! ')
-#end
 
 
 
