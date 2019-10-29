@@ -76,13 +76,46 @@
 # 	elif contador%2 != 0:
 # 		print(nova_palavra)
 
-# #4
-# palavra4 = str(input("Coloque outra palavra: "))
+#4
+#palavra5 = str(input("Coloque outra palavra: "))
+#nova_palavra = ''
+
+#for letra1 in palavra5:
+#	nova_palavra = nova_palavra + letra1
+#	nova_palavra
+ 
+#print(nova_palavra)
+
+	
+
+#5
+#palavra4 = str(input("Coloque outra palavra: "))
+#np=""
+#for letra in palavra4:
+#	if letra == "a":
+#		letra = "4"
+#	if letra == "e":
+#		letra = "3"
+#	if letra == "l":
+#		letra = "1"
+#	if letra == "t":
+#		letra = "7"
+#	print(letra)
 
 
-# for letra in palavra4:
-# 	print(letra.replace("a", "4"))
-# 	print(letra.replace("e", "3"))
-# 	print(letra.replace("i", "1"))
-# 	print(letra.replace("t", "7"))
-# 	print(letra)
+#6
+#palavra = input("escolha uma palavra para ver se ela é um palindromo: ")
+#print(palavra[::-1])
+
+
+#7
+#palavra = input("escolha uma palavra para ver se ela é um palindromo: ")
+#arvalap = palavra[::-1]
+
+#if palavra == arvalap:
+#	print('Essa palavra é um palimdromo!! ')
+#else:
+#	print('Ela n é um palimdromo!! ')
+
+#9
+#palavra = input("escolha uma palavra para ver se ela é um palindromo: ")
