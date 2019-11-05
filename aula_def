@@ -1,0 +1,73 @@
+import math
+#def imprima():
+#	resultado = 15 + 30
+#	print(resultado)
+#
+#imprima()
+#
+#def texto(frase):
+#	print('ola mundo')
+#
+#texto('ola para alguem')
+#
+#
+#def f(x):
+#	resul = x *2
+#	return resul
+#
+#print(f(5))
+#
+#if f(5) == 7:
+#	print('verdadeiro')
+#
+#
+#def soma(x,y):
+#	return x + y
+#
+#n_1 = int(input("primeiro numero: "))
+#n_2 = int(input("segundo numero: "))
+#
+#print(soma(n_1, n_2))
+
+#########exercicio#1##########
+
+def dobro(x):
+	x2 = x * 2
+	print(x2)
+
+x = int(input("escolha um numero: "))
+
+dobro(x)
+
+#########exercicio#2##########
+
+def raio(r):
+	C = 2*(math.pi)*r
+	return C
+
+r = int(input("raio: "))
+
+print(math.ceil(raio(r)))
+
+#########exercicio#3##########
+
+def soma(y,z):
+	so = y + z
+	print(so)
+def subi(y,z):
+	su = y - z
+	print(su)
+def mult(y,z):
+    m = y * z
+    print(m)
+def divi(y,z):
+	d = y / z
+	print(d)
+
+z = int(input(":"))
+y = int(input(":"))
+
+soma(y,z)
+subi(y,z)
+mult(y,z)
+divi(y,z)
