@@ -71,3 +71,18 @@ soma(y,z)
 subi(y,z)
 mult(y,z)
 divi(y,z)
+
+#########exercicio#4##########
+
+def nome(n):
+	print(f"ola {n} !!")
+
+n = input("seu nome : ")
+nome(n)
+
+#########exercicio#5##########
+
+def comprimento():
+
+h= #horario
+n= #nome
