@@ -1,4 +1,6 @@
 import time
+import random
+
 def espada ():
     print("""
     
@@ -23,6 +25,9 @@ def espada ():
  &&&&&&&                          
     
     """)
+
+def matou():
+  print('Você matou o monstro!!!')
 
 def e():
   print(' ')
@@ -66,23 +71,13 @@ espada = 8
 punho = 4
 vida = 100
 ##########MONSTROS#############
-esqueleto1 = 17
+esqueleto1 = random.randint(10,18)
 
-print(""" 
 
- _                            _           _                           _                                               _____       _   _                 
- | |                          (_)         | |                         | |                                      ___    |  __ \     | | | |                
- | |__   ___ _ __ ___   __   ___ _ __   __| | ___     __ _  ___     __| |_   _ _ __   __ _  ___  ___  _ __    ( _ )   | |__) |   _| |_| |__   ___  _ __  
- | '_ \ / _ \ '_ ` _ \  \ \ / / | '_ \ / _` |/ _ \   / _` |/ _ \   / _` | | | | '_ \ / _` |/ _ \/ _ \| '_ \   / _ \/\ |  ___/ | | | __| '_ \ / _ \| '_ \ 
- | |_) |  __/ | | | | |  \ V /| | | | | (_| | (_) | | (_| | (_) | | (_| | |_| | | | | (_| |  __/ (_) | | | | | (_>  < | |   | |_| | |_| | | | (_) | | | |
- |_.__/ \___|_| |_| |_|   \_/ |_|_| |_|\__,_|\___/   \__,_|\___/   \__,_|\__,_|_| |_|\__, |\___|\___/|_| |_|  \___/\/ |_|    \__, |\__|_| |_|\___/|_| |_|
-                                                                                      __/ |                                   __/ |                      
-                                                                                     |___/                                   |___/                       
-
-""")
 print('Este sera um jogo de rpg com escolhas, dependendo da sua escolha \nvocê pode morrer ou prosseguir ate seu final e ver o que ira acontecer')
-print(' ')
+e()
 esc = str(input('você deseja começar o jogo?[s/n] '))
+nome = input('Qual seria seu nome: ')
 
 while vida > 0 :
   if esc == 's':
@@ -112,24 +107,39 @@ while vida > 0 :
         print('...')
         t(1.75)
         print('...')
+        t(1.75)
         e()
         print('Um monstro começa a chegar perto.\nVocê se levanta e se prepara para luta!')
         e()
         t(3)
-        while esqueleto1 > 0 :
-          print(f'Esqueleto--hp:{esqueleto1}')
-          e()
-          print('1.Espada\n2.Punhos\n3.Chorar')
-          e()
-          esc = input('O que você ira fazer ? [e/p/c]')
-          if esc == "e":
-            esqueleto1 = esqueleto1 - espada
-            print(f'Você deu {espada} de dano ')
-          elif esc == 'p':
-            esqueleto1 = esqueleto1 - punho
+        if 0 == 0:
 
-
-          
+          while esqueleto1 > 0 :
+            print(f'Esqueleto--hp: {esqueleto1}')
+            e()
+            e()
+            print(f'{nome}--hp: {vida}')
+            e()
+            print('1.Espada\n2.Punhos\n3.Chorar')
+            e()
+            esc = input('O que você ira fazer ? [e/p/c] ')
+            vida = vida - random.randint(4,8)
+            if vida <= 0: 
+              print('Você morreu!!!')
+              exit
+            if esc == "e":
+              esqueleto1 = esqueleto1 - espada
+              print(f'Você deu {espada} de dano ')
+            if esc == 'p':
+              esqueleto1 = esqueleto1 - punho
+              print(f'Você deu {punho} de dano ')
+            if esc == 'c' and vida < 100:
+              curado = random.randint(8,12)
+              vida = vida + curado
+              print(f'Você se curou {curado} de vida ')
+            elif esc == 'c':
+              print('Você não pode chorar no momento')
+        print('Você matou o monstro!!!')
 
     elif esc == "n":
       e()
@@ -142,8 +152,20 @@ while vida > 0 :
         print('Você fica segurando por alguns segundos, mas você fica cançado e solta, caindo de cabeça no chão e morrer')
 
       elif esc == "soltar":
-        print('Você cai bruscamente ensima de um slime, o matando ,mas você continua inteiro')
-        print('')
+        print('Você cai bruscamente encima de um slime, o matando ,mas você continua inteiro')
+        print('Você se levanta e vai em direção a porta\nvocê ve um slime.') 
+        esc = input('Você pode tentar virar amigo ou mata-lo. [a/m]')
+
+        if esc == 'a':
+          print('Você se aproxima dele calmamente')
+
+        elif esc == 'm':
+          print('Você tenta bater nele com sua espada,\n mas infelizmente quando encosta nele ela se derrete,\nlogo em seguida ele pula em você fazendo você virar so os osso.')
+          e()
+          morte()
+          
+
+
 
     else:
       print(errado())
@@ -154,3 +176,8 @@ while vida > 0 :
     exit
   else:
       print(errado())
+
+
+
+
+
