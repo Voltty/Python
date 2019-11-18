@@ -1,44 +1,51 @@
 import time
 import random
 
-# def esqueletos():
-#             while esqueleto1 > 0 :
-#             print(f'Esqueleto--hp: {esqueleto1}')
-#             e()
-#             e()
-#             print(f'{nome}--hp: {vida}')
-#             e()
-#             print('1.Espada\n2.Punhos\n3.Chorar\n4.Poupar')
-#             e()
-#             esc = input('O que você ira fazer ? [e/pu/c/po] ')
-#             vida = vida - random.randint(4,8)
-#             if vida <= 0: 
-#               t(1)
-#               print('Você morreu!!!')
-#               exit
-#             if esc == "e":
-#               t(1)
-#               esqueleto1 = esqueleto1 - espada
-#               print(f'Você deu {espada} de dano ')
-#             if esc == 'p':
-#               t(1)
-#               esqueleto1 = esqueleto1 - punho
-#               print(f'Você deu {punho} de dano ')
-#             if esc == 'c' and vida < 100:
-#               t(1)
-#               curado = random.randint(8,12)
-#               vida = vida + curado
-#               print(f'Você se curou {curado} de vida ')
-#             if esc == 'po':
-#               t(1)
-#               print('Nos não precisamos lutar')
-#               poupar = poupar + random.randint(1,3)
-#             if poupar >= 12:
-#               prin('O monstro entendeu seu lado e foi embora')
-#             elif esc == 'c':
-#               print('Você não pode chorar no momento')
-#         poupar = 0
-#         matou()
+espada = 8
+punho = 4
+vida = 100
+poupar = 0
+##########MONSTROS#############
+esqueleto1 = random.randint(10,18)
+
+def esqueletos(esqueleto1, nome, vida):
+  while esqueleto1 > 0 :
+    print(f'Esqueleto--hp: {esqueleto1}')
+    e()
+    e()
+    print(f'{nome}--hp: {vida}')
+    e()
+    print('1.Espada\n2.Punhos\n3.Chorar\n4.Poupar')
+    e()
+    esc = input('O que você ira fazer ? [e/pu/c/po] ')
+    vida = vida - random.randint(4,8)
+    if vida <= 0: 
+      t(1)
+      print('Você morreu!!!')
+      exit
+    if esc == "e":
+      t(1)
+      esqueleto1 = esqueleto1 - espada
+      print(f'Você deu {espada} de dano ')
+    if esc == 'pu':
+      t(1)
+      esqueleto1 = esqueleto1 - punho
+      print(f'Você deu {punho} de dano ')
+    if esc == 'c' and vida < 100:
+      t(1)
+      curado = random.randint(8,12)
+      vida = vida + curado
+      print(f'Você se curou {curado} de vida ')
+    if esc == 'po':
+      t(1)
+      print('Nos não precisamos lutar')
+      poupar = poupar + random.randint(1,3)
+    if poupar >= 12:
+      print('O monstro entendeu seu lado e foi embora')
+    elif esc == 'c':
+      print('Você não pode chorar no momento')
+  poupar = 0
+  matou()
 
 
 
@@ -107,12 +114,7 @@ def morte():
 def errado():
     print('Essa opção não existe, escolha uma opção valida!!!')
 
-espada = 8
-punho = 4
-vida = 100
-poupar = 0
-##########MONSTROS#############
-esqueleto1 = random.randint(10,18)
+
 
 print('''
 
@@ -140,31 +142,42 @@ while vida > 0 :
     print('..................................................')
     print('Você é um jovem explorador que em sua mochila tem uma espada, em sua busca por uma nova aventura acaba se deparando com a entrada de uma dungeon subterranea.')
     esc = str(input('Você deseja entrar na dungeon? [s/n] '))
+
     if esc == "s":
       e()
       print("Você desce as escadas, começa a ouvir uns barulho estranhos. ")
-      t(1.75)
-      print('Você chega em uma sala bem grande cheia de poeira e ossos pelo chão.')
-      t(1.75)
+      t(2.5)
+      print('chegandao em uma sala bem grande, cheia de poeira e ossos pelo chão.')
+      t(2.5)
       print('Você ve alguns caminhos que podera seguir para chegar ao fim da dungeon.')
-      t(2)
+      t(3)
       esc = str(input('Você ira para esquerda , para a direita ou sentar e chorar? [d/e/c] '))
+
       if esc == 'd':
         e()
-        print(f'Você começa a andar em direção a direita.\nQuando chega parentimente não tem nada na sala.')
-        esc = input('Você pode continuar para proxima sala ou ficar olhando a sala. [c/f]')
+        print(f'Você começa a andar em direção a direita.')
+        t(2)
+        print('Quando chega aparentimente não tem nada na sala.')
+        t(2.5)
+        esc = input('Você pode continuar para proxima sala ou ficar olhando a sala. [c/f] ')
+
         if esc == "c":
           e()
           print("Você prossegue para proxima sala,\nsentindo que alguma coisa foi deixada para traz.")
+
         elif esc == "f":
           e()
-          esc = 1
           print('Você fica olhando cada canto da sala,')
+          t(2)
           print('você começa a pensar por que você decidiu ficar olhando se não havia nada')
-          ficar = input('Você ira prosseguir ou ira continuar a ficar olhando? [p/c]')
-          if ficar == 'c':
-      elif esc == 'e':
-        print('')
+          t(2)
+          ficar = input('Você ira prosseguir para proxima sala ou ira ficar olhando novamente? [p/f] ')
+          if ficar == 'f':
+            print('Voce')
+      if esc == 'e':
+        print('voce foi para esquerda')
+
+
       if esc == 'c':
         e()
         print('Você começa a pensar na sua vida enquanto chora.')
@@ -180,44 +193,7 @@ while vida > 0 :
         e()
         t(3)
         if 0 == 0:#batalha
-          while esqueleto1 > 0 :
-            print(f'Esqueleto--hp: {esqueleto1}')
-            e()
-            e()
-            print(f'{nome}--hp: {vida}')
-            e()
-            print('1.Espada\n2.Punhos\n3.Chorar\n4.Poupar')
-            e()
-            esc = input('O que você ira fazer ? [e/pu/c/po] ')
-            vida = vida - random.randint(4,8)
-            if vida <= 0: 
-              t(1)
-              print('Você morreu!!!')
-              exit
-            if esc == "e":
-              t(1)
-              esqueleto1 = esqueleto1 - espada
-              print(f'Você deu {espada} de dano ')
-            if esc == 'p':
-              t(1)
-              esqueleto1 = esqueleto1 - punho
-              print(f'Você deu {punho} de dano ')
-            if esc == 'c' and vida < 100:
-              t(1)
-              curado = random.randint(8,12)
-              vida = vida + curado
-              print(f'Você se curou {curado} de vida ')
-            if esc == 'po':
-              t(1)
-              print('Nos não precisamos lutar')
-              poupar = poupar + random.randint(1,3)
-            if poupar >= 12:
-              prin('O monstro entendeu seu lado e foi embora')
-            elif esc == 'c':
-              print('Você não pode chorar no momento')
-        poupar = 0
-        matou()
-
+          esqueletos(esqueleto1, nome, vida)
     elif esc == "n":
       e()
       print('Você vai em direção a cidade, mas acaba caindo em um buraco.')
