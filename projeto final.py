@@ -8,9 +8,10 @@ poupar = 0
 ##########MONSTROS#############
 esqueleto1 = random.randint(10,18)
 
-def esqueletos(esqueleto1, nome, vida):
-  while esqueleto1 > 0 :
-    print(f'Esqueleto--hp: {esqueleto1}')
+
+def monstro(monstroV, nome, vida, espada, punho, poupar, nome_monstro):
+  while monstroV > 0 :
+    print(f'{nome_monstro}--hp: {monstroV}')
     e()
     e()
     print(f'{nome}--hp: {vida}')
@@ -25,11 +26,11 @@ def esqueletos(esqueleto1, nome, vida):
       exit
     if esc == "e":
       t(1)
-      esqueleto1 = esqueleto1 - espada
+      monstroV = monstroV - espada
       print(f'Você deu {espada} de dano ')
     if esc == 'pu':
       t(1)
-      esqueleto1 = esqueleto1 - punho
+      monstroV  = monstroV - punho
       print(f'Você deu {punho} de dano ')
     if esc == 'c' and vida < 100:
       t(1)
@@ -42,12 +43,11 @@ def esqueletos(esqueleto1, nome, vida):
       poupar = poupar + random.randint(1,3)
     if poupar >= 12:
       print('O monstro entendeu seu lado e foi embora')
+      break
     elif esc == 'c':
       print('Você não pode chorar no momento')
   poupar = 0
   matou()
-
-
 
 def espada ():
     print("""
@@ -139,8 +139,11 @@ while vida > 0 :
     nome = input('Qual seria seu nome: ')
     e()
     print('Então vamos embarca em uma jornada inesquecivel .')
-    print('..................................................')
+    e()
+    t(2)
     print('Você é um jovem explorador que em sua mochila tem uma espada, em sua busca por uma nova aventura acaba se deparando com a entrada de uma dungeon subterranea.')
+    e()
+    t(6)
     esc = str(input('Você deseja entrar na dungeon? [s/n] '))
 
     if esc == "s":
@@ -163,7 +166,9 @@ while vida > 0 :
 
         if esc == "c":
           e()
-          print("Você prossegue para proxima sala,\nsentindo que alguma coisa foi deixada para traz.")
+          print("Você prossegue para proxima sala,")
+          t(1)
+          print("sentindo que alguma coisa foi deixada para traz.")
 
         elif esc == "f":
           e()
@@ -171,16 +176,19 @@ while vida > 0 :
           t(2)
           print('você começa a pensar por que você decidiu ficar olhando se não havia nada')
           t(2)
-          ficar = input('Você ira prosseguir para proxima sala ou ira ficar olhando novamente? [p/f] ')
+          esc = input('Você ira prosseguir para proxima sala ou ira ficar olhando novamente? [p/f] ')
           if ficar == 'f':
-            print('Voce')
+            print('Você')
+          elif esc == 'p':
+            print('Você')
       if esc == 'e':
         print('voce foi para esquerda')
 
-
       if esc == 'c':
         e()
-        print('Você começa a pensar na sua vida enquanto chora.')
+        print('Voce começa a deitar no chão lentamente,')
+        t(2)
+        print('começando a pensar na sua vida enquanto chora.')
         t(1.75)
         print('...')
         t(1.75)
@@ -193,7 +201,8 @@ while vida > 0 :
         e()
         t(3)
         if 0 == 0:#batalha
-          esqueletos(esqueleto1, nome, vida)
+          monstro(esqueleto1, nome, vida, espada, punho, poupar, 'esqueleto')
+
     elif esc == "n":
       e()
       print('Você vai em direção a cidade, mas acaba caindo em um buraco.')
@@ -201,6 +210,7 @@ while vida > 0 :
       if esc == "segurar":#morte
         e()
         morte()
+        break
         print('Você fica segurando por alguns segundos, mas você fica cançado e solta, caindo de cabeça no chão e morrer')
       elif esc == "soltar":
         print('Você cai bruscamente encima de um slime, o matando ,mas você continua inteiro')
@@ -208,6 +218,8 @@ while vida > 0 :
         esc = input('Você pode tentar virar amigo ou mata-lo. [a/m] ')
         if esc == 'a':
           print('Você se aproxima dele calmamente')
+          t(1)
+          print('ele fica bem assustado por ser ')
         elif esc == 'm':
           print('Você tenta bater nele com sua espada,')
           t(1.75)
@@ -220,7 +232,7 @@ while vida > 0 :
   elif esc == 'n':
     e()
     print("Ja que você diz, aqui me dispeço")
-    exit
+    break
 
 print('Seu HP chegou 0')
 e()
