@@ -113,6 +113,10 @@ def morte():
      @@@@                               @@@@     
    ''')
 
+def manopla():
+  print('''
+
+  ''')
 
 
 
@@ -199,8 +203,27 @@ while vida > 0 :
           elif esc == 'p':
             e()
             print("Você prossegue para proxima sala,")
+            e()
             t(1)
-            print("sentindo que alguma coisa foi deixada para traz.")
+            print("Sentindo que alguma coisa foi deixada para traz.")
+            e()
+            t(4)
+            print('Seguindo para proxima sala você ve uma borboleta com um desenho de caveira nas asas, mas a ignora.')
+            e()
+            t(4)
+            print("Chegando na proxima sala você se depara com algumas cobras")
+            e()
+            t(2)
+            print('Que você se lembra de ter aprendido que eram pythons bebês')
+            e()
+            t(2)
+            print('E não são nem um pouco amigaveis')
+            e()
+            t(1)
+            print('Mas ja era tarde pois ja haviam te certado')
+            e()
+            t()
+
       if esc == 'e':
         print('voce foi par')
 
