@@ -1,11 +1,24 @@
 import time
 import random
 
-espada = 8
-punho = 4
-vida = 100
-poupar = 0
+vida=100
+poupar=0
+monstroV = int(random.randint(12,18))
 
+def matou():
+  print('Você matou o monstro!!!')
+
+def e():
+  print(' ')
+
+def t(p1):
+  time.sleep(p1)
+
+def v():
+  print(f'Você esta com {vida} de vida')
+
+def errado():
+    print('Essa opção não existe, escolha uma opção valida!!!')
 
 def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar):
   while monstroV > 0 :
@@ -18,33 +31,34 @@ def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar):
     e()
     esc = input('O que você ira fazer ? [e/pu/c/po] ')
     vida = vida - random.randint(4,8)
+    t(1)
     if vida <= 0: 
-      t(1)
       print('Você morreu!!!')
       break
-    if esc == "e":
-      t(1)
+    elif esc == "e":
       monstroV = monstroV - espada
       print(f'Você deu {espada} de dano ')
-    if esc == 'pu':
-      t(1)
-      monstroV = monstroV - punho
+    elif esc == 'pu':
+      monstroV = int(monstroV - punho)
       print(f'Você deu {punho} de dano ')
-    if esc == 'c' and vida < 100:
-      t(1)
+    elif esc == 'c' and vida < 100:
       curado = random.randint(8,12)
       vida = vida + curado
       print(f'Você se curou {curado} de vida ')
-    if esc == 'po':
-      t(1)
+    elif esc == 'po':
       print('Nos não precisamos lutar')
       poupar = poupar + random.randint(1,3)
-    if poupar >= 12:
+    elif poupar >= 12:
       print('O monstro entendeu seu lado e foi embora')
-    elif esc == 'c':
+      break
+    elif esc == 'c' and vida >= 100:
       print('Você não pode chorar no momento')
+    if esc == 'e' or "pu":
+      poupar = 0
   poupar = 0
   matou()
+  v()
+
 
 def espada ():
     print("""
@@ -70,15 +84,6 @@ def espada ():
  &&&&&&&                          
     
     """)
-
-def matou():
-  print('Você matou o monstro!!!')
-
-def e():
-  print(' ')
-
-def t(p1):
-  time.sleep(p1)
 
 def morte():
   print('''
@@ -108,8 +113,6 @@ def morte():
      @@@@                               @@@@     
    ''')
 
-def errado():
-    print('Essa opção não existe, escolha uma opção valida!!!')
 
 
 
@@ -128,7 +131,7 @@ print('''
 
 print('Este sera um jogo de rpg com escolhas, dependendo da sua escolha \nvocê pode morrer ou prosseguir ate seu final e ver o que ira acontecer')
 e()
-esc = str(input('você deseja começar o jogo?[s/n] '))
+esc = str(input('Você deseja começar o jogo?[s/n] '))
 
 while vida > 0 :
   if esc == 's':
@@ -151,7 +154,7 @@ while vida > 0 :
       print("Você desce as escadas, começa a ouvir uns barulho estranhos. ")
       e()
       t(2.5)
-      print('chegandao em uma sala bem grande, cheia de poeira e ossos pelo chão.')
+      print('Chegandao em uma sala bem grande, cheia de poeira e ossos pelo chão.')
       e()
       t(2.5)
       print('Você ve alguns caminhos que podera seguir para chegar ao fim da dungeon.')
@@ -166,13 +169,15 @@ while vida > 0 :
         print('Quando chega aparentimente não tem nada na sala.')
         t(2.5)
         esc = input('Você pode continuar para proxima sala ou ficar olhando a sala. [c/f] ')
-
         if esc == "c":
           e()
           print("Você prossegue para proxima sala,")
+          e()
           t(1)
-          print("sentindo que alguma coisa foi deixada para traz.")
-
+          print("Sentindo que alguma coisa foi deixada para traz.")
+          e()
+          t(3)
+          print('')
         elif esc == "f":
           e()
           print('Você fica olhando cada canto da sala,')
@@ -180,7 +185,7 @@ while vida > 0 :
           print('você começa a pensar por que você decidiu ficar olhando se não havia nada')
           t(2)
           esc = input('Você ira prosseguir para proxima sala ou ira ficar olhando novamente? [p/f] ')
-          if ficar == 'f':
+          if esc == 'f':
             e()
             print('Você fica la olhando para cada canto da sala ate que...')
             e()
@@ -188,8 +193,9 @@ while vida > 0 :
             print('Você percebe uma parte estranha no rodapé da sala')
             e()
             t(2)
-            print()
-
+            print('Percebe que é possivel afundalo')
+            e()
+            t()
           elif esc == 'p':
             e()
             print("Você prossegue para proxima sala,")
@@ -219,7 +225,7 @@ while vida > 0 :
         e()
         t(2.5)
         if 0 == 0:#batalha
-          monstro('Esqueleto', random.randint(12,18), nome, vida, espada, punho, poupar)
+          monstro('Esqueleto', monstroV, nome, vida, 8, 4, poupar)
 
     elif esc == "n":
       e()
@@ -296,43 +302,3 @@ if vida <= 0 :
   e()
   t(2.3)
   morte()
-
-#def monstro(monstroV, nome, vida, espada, punho, poupar, nome_monstro):
-#   while monstroV > 0 :
-#     print(f'{nome_monstro}--hp: {monstroV}')
-#     e()
-#     e()
-#     print(f'{nome}--hp: {vida}')
-#     e()
-#     print('1.Espada\n2.Punhos\n3.Chorar\n4.Poupar')
-#     e()
-#     esc = input('O que você ira fazer ? [e/pu/c/po] ')
-#     vida = vida - random.randint(4,8)
-#     if vida <= 0: 
-#       t(1)
-#       print('Você morreu!!!')
-#       exit
-#     if esc == 'pu':
-#       t(1)
-#       monstroV  = monstroV - punho
-#       print(f'Você deu {punho} de dano ')
-#     if esc == "e":
-#       t(1)
-#       monstroV = monstroV - espada
-#       print(f'Você deu {espada} de dano ')
-#     if esc == 'c' and vida < 100:
-#       t(1)
-#       curado = random.randint(8,12)
-#       vida = vida + curado
-#       print(f'Você se curou {curado} de vida ')
-#     if esc == 'po':
-#       t(1)
-#       print('Nos não precisamos lutar')
-#       poupar = poupar + random.randint(1,3)
-#     if poupar >= 12:
-#       print('O monstro entendeu seu lado e foi embora')
-#       break
-#     elif esc == 'c':
-#       print('Você não pode chorar no momento')
-#   poupar = 0
-#   matou()
