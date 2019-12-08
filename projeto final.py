@@ -20,7 +20,7 @@ def v():
   print(f'Você esta com {vida} de vida')
 
 def errado():
-    print('Essa opção não existe, escolha uma opção valida!!!')
+  print('Essa opção não existe, escolha uma opção valida!!!')
 
 def a1():
   e()
@@ -84,15 +84,54 @@ def a1b():
   print("A python BOSS comeu você")
   break
 
-
-
-
-
 # def a2():
 
 # def a2b():
 
-# def a3b():
+def a3b():
+  e()
+  t(3)
+  print('Você encontrou uma sala com um grande baú')
+  e()
+  t(4)
+  print('Quando você abre o baú ')
+  e()
+  t(2)
+  print('Você ve muito ouro e prata,')
+  print('Joias e um item magico estranho')
+  e()
+  t(5)
+  print('Quando você o aperta ele fez um brilho muito forte')
+  e()
+  t(4)
+  print('O deixando cego')
+  e()
+  t(3)
+  print('...')
+  e()
+  t(3)
+  print('...')
+  e()
+  t(3)
+  print('...')
+  e()
+  t(3)
+  print('Quando a cegueira passa você percebe que ')
+  e()
+  t(8)
+  print('Estava na frente de sua cidade')
+  e()
+  t(5)
+  print('Você da um suspiro de alivio')
+  e()
+  t(3)
+  print('E vai em direção a sua casa para descançar um pouco')
+  e()
+  e()
+  t(6)
+  fim()
+  break
+
 
 
 def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar,qp):
@@ -135,7 +174,7 @@ def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar,qp):
   v()
 
 def portaE(f):
- print('Você entra na porta esquerda')
+  print('Você entra na porta esquerda')
   e()
   t(2.5)
   print(f'{f}')
@@ -162,7 +201,7 @@ def bau():
   t(3)
 
 def espada ():
-    print("""
+  print("""
     
                                            
                                &&&&&&& 
@@ -213,14 +252,44 @@ def morte():
      @%  @                             @#  @     
      @@@@                               @@@@     
    ''')
-
-def manopla():
+def luvas():
   print('''
-
+                                                   
+               /////////////*****                
+            //(((((((((////////*****             
+          //(((((((((((//////,,,,,,**            
+         //((((((((((((//////*****,,,            
+         /((((((((((((/////////*,,,*****         
+         //((((((((((//////////,,,,******        
+         ////((((((///////////*,,,,******        
+         ////////////////////***,,*******        
+         ///////////////////************         
+         **///////////////**************         
+          *////////////****************          
+          ****************************           
+           **************************            
+           *************************             
+            ***********************              
+              ******************,                
+              ,*****************,                
+              /((/***************                
+              /((#(((/////*/(****                
+              /(&&&&&&&&%%%%%%(**                
+              //&&&&&&&&%%%%%%/**                
+              ////%&&&&%%%%%*****                
+                ***************                  
   ''')
-
-
-
+def fim():
+  print('''
+  ______ _                 _             _                    
+ |  ____(_)               | |           | |                   
+ | |__   _ _ __ ___     __| | ___       | | ___   __ _  ___   
+ |  __| | | '_ ` _ \   / _` |/ _ \  _   | |/ _ \ / _` |/ _ \  
+ | |    | | | | | | | | (_| |  __/ | |__| | (_) | (_| | (_) | 
+ |_|    |_|_| |_| |_|  \__,_|\___|  \____/ \___/ \__, |\___/  
+                                                  __/ |       
+                                                 |___/        
+  ''')
 print('''
 
   ____                         _           _                       _____                                                _____       _   _                 
@@ -313,7 +382,7 @@ while vida > 0 :
             t(2)
             espada()
             print('\033[;1m"Dano de espada aumentado para 12"')
-          if esc == 'p': #a1
+          if esc == 'p': #a1#morte
             a1()
             a1b()
       if esc == 'e':
@@ -329,12 +398,9 @@ while vida > 0 :
         t(2.5)
         print('E o caminho da esquerda que parece ser um longo caminho')
         esc = input('Você vai seguir por qual caminho? [e/d] ')
-        if esc == 'd':#a1
+        if esc == 'd':#a1#morte
           a1()
           a1b()
-
-
-
         if esc == 'e':
          portaE('E ja se depara com outras portas.')
           if esc == 'e':
@@ -343,18 +409,19 @@ while vida > 0 :
               portaD('E ja se depara com outras portas.'))
               if esc == 'd':
                 portaD('Pelo que parece tem mais duas portas')
-                if esc == "e":
-                  portaE
-                if esc == 'd':#a1
+                if esc == "e":#a3b#FimP
+                  a3b()
+                  print()
+                if esc == 'd':#a1#morte
                   a1()
                   a1b()
-              if esc == 'e':#a1
+              if esc == 'e':#a1#morte
                 a1()
                 a1b()
-            if esc == 'e': #a1
+            if esc == 'e': #a1#morte
             a1()
             a1b()
-          if esc == 'd':#a1
+          if esc == 'd':#a1#morte
             a1()
             a1b()
       if esc == 'c':
@@ -388,7 +455,7 @@ while vida > 0 :
           e()
           t(2)
           esc = input('Você vai abrir o bau numero 1 ou 2? [1/2]')
-          if esc == 1 :
+          if esc == 1 :#morte
             bau()
             print('Sua mão é comido pelo baú')
             e()
@@ -448,7 +515,7 @@ while vida > 0 :
         t(1.5)
         print('O matando ,')
         e()
-        t(1)
+        t(3)
         print('Mas você continua inteiro.')
         e()
         t(2)
@@ -470,23 +537,28 @@ while vida > 0 :
           print('Mas mesmo assim parece gostar de você.')
           e()
           t(5)
-          print('Você então procegue')
-        elif esc == 'm':
+          print('Você então prossegue')
+        elif esc == 'm':#morte
           e()
           print('Você tenta bater nele com sua espada,')
           e()
           t(1.75)
-          print('mas infelizmente quando encosta nele ela se derrete,')
-          e()
-          t(1.75)
-          print('logo em seguida ele pula em você fazendo você virar so os osso.')
+          print('Mas infelizmente quando encosta nele ela se derrete,')
           e()
           t(3)
+          print('Ele pula em você')
           e()
+          t(3.5)
+          print('A carne de seu corpo inteiro é derretida pelo slime ')
+          e()
+          t(6)
           morte()
   elif esc == 'n':
     e()
     print("Ja que você diz, aqui me dispeço")
+    e()
+    t(2)
+    print('Adios :)')
     break
 if vida <= 0 :
   print('Seu HP chegou 0')
