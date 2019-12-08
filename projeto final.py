@@ -3,7 +3,9 @@ import random
 
 vida=100
 poupar=0
-monstroV = int(random.randint(12,18))
+esqueletoV = int(random.randint(12,18))
+pythonV = 100
+golemV = int(random.randint(25,40))
 
 def matou():
   print('Você matou o monstro!!!')
@@ -20,7 +22,80 @@ def v():
 def errado():
     print('Essa opção não existe, escolha uma opção valida!!!')
 
-def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar):
+def a1():
+  e()
+  print("Você prossegue para proxima sala,")
+  e()
+  t(1)
+  print("Sentindo que alguma coisa foi deixada para traz.")
+  e()
+  t(4)
+  print('Seguindo para proxima sala você ve uma borboleta com um desenho de caveira nas asas, mas a ignora.')
+  e()
+  t(4)
+  print("Chegando na proxima sala você se depara com algumas cobras")
+  e()
+  t(2)
+  print('Que você se lembra de ter aprendido que eram pythons bebês')
+  e()
+  t(2)
+  print('E não são nem um pouco amigaveis')
+  e()
+  t(1)
+  print('Mas ja era tarde pois ja haviam te pegado')
+  e()
+  t(4)
+  print('Elas começam a te levar para o ninho delas')
+  e()
+  t(2)
+  print('...')
+  t(2.5)
+  print('...')
+  t(3)
+  print('...')
+  t(4)
+  print('Quando você chega no ninho')
+  e()
+  t(2)
+  print('Avista uma python enorme')
+  e()
+  t(2)
+  print('Que provavelmente é o BOSS da dungeon')
+  e()
+  t(4)
+  print('As python bebês te soltam')
+  e()
+  t(3)
+
+def a1b():
+  print('Você tenta correr mas ja é tarde ')
+  e()
+  t(3)
+  print('Porque ela ja macou você como presa e ira te comer')
+  e()
+  t(5)
+  print('Você tenta bater nela mas é inutil, pois ela é muito forte')
+  e()
+  t(5)
+  print('Então ela te morde, arraca sua cabeça ')
+  e()
+  t(6.5)
+  morte()
+  print("A python BOSS comeu você")
+  break
+
+
+
+
+
+# def a2():
+
+# def a2b():
+
+# def a3b():
+
+
+def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar,qp):
   while monstroV > 0 :
     print(f'{nome_monstro}--hp: {monstroV}')
     e()
@@ -48,7 +123,7 @@ def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar):
     elif esc == 'po':
       print('Nos não precisamos lutar')
       poupar = poupar + random.randint(1,3)
-    elif poupar >= 12:
+    elif poupar >= qp:
       print('O monstro entendeu seu lado e foi embora')
       break
     elif esc == 'c' and vida >= 100:
@@ -59,6 +134,32 @@ def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar):
   matou()
   v()
 
+def portaE(f):
+ print('Você entra na porta esquerda')
+  e()
+  t(2.5)
+  print(f'{f}')
+  e()
+  t(3)
+  esc = input('esquerda ou direita ? [e/d] ')
+
+def portaD(f):
+  print('Você entra na porta direita')
+  e()
+  t(2.5)
+  print(f'{f}')
+  e()
+  t(3)
+  esc = input('esquerda ou direita ? [e/d] ')
+
+
+def bau():
+  print('Você se aproxima do baú')
+  e()
+  t(2)
+  print('Quando você vai abrir')
+  e()
+  t(3)
 
 def espada ():
     print("""
@@ -144,15 +245,14 @@ while vida > 0 :
     e()
     print('Então vamos embarca em uma jornada inesquecivel .')
     e()
-    t(2)
+    t(3)
     print('Você é um jovem explorador que em sua mochila tem uma espada um pouco velha,')
     e()
-    t(2.6)
+    t(4)
     print('Em sua busca por uma nova aventura acaba se deparando com a entrada de uma dungeon subterranea.')
     e()
-    t(3.5)
+    t(5.4)
     esc = str(input('Você deseja entrar na dungeon? [s/n] '))
-
     if esc == "s":
       e()
       print("Você desce as escadas, começa a ouvir uns barulho estranhos. ")
@@ -165,7 +265,6 @@ while vida > 0 :
       e()
       t(3)
       esc = str(input('Você ira para esquerda , para a direita ou sentar e chorar? [d/e/c] '))
-
       if esc == 'd':
         e()
         print(f'Você começa a andar em direção a direita.')
@@ -173,15 +272,9 @@ while vida > 0 :
         print('Quando chega aparentimente não tem nada na sala.')
         t(2.5)
         esc = input('Você pode continuar para proxima sala ou ficar olhando a sala. [c/f] ')
-        if esc == "c":
-          e()
-          print("Você prossegue para proxima sala,")
-          e()
-          t(1)
-          print("Sentindo que alguma coisa foi deixada para traz.")
-          e()
-          t(3)
-          print('')
+        if esc == "c":#a1
+          a1()
+          a1b()
         elif esc == "f":
           e()
           print('Você fica olhando cada canto da sala,')
@@ -200,33 +293,70 @@ while vida > 0 :
             print('Percebe que é possivel afundalo')
             e()
             t()
-          elif esc == 'p':
-            e()
-            print("Você prossegue para proxima sala,")
-            e()
-            t(1)
-            print("Sentindo que alguma coisa foi deixada para traz.")
-            e()
-            t(4)
-            print('Seguindo para proxima sala você ve uma borboleta com um desenho de caveira nas asas, mas a ignora.')
-            e()
-            t(4)
-            print("Chegando na proxima sala você se depara com algumas cobras")
+            print('Quando você o pressiona')
             e()
             t(2)
-            print('Que você se lembra de ter aprendido que eram pythons bebês')
+            print('Cai um golem do teto')
             e()
             t(2)
-            print('E não são nem um pouco amigaveis')
+            print('Você ja preparado para a luta avança')
             e()
-            t(1)
-            print('Mas ja era tarde pois ja haviam te certado')
+            t(4)
+            monstro('Golem', golemV, nome, vida, 4, 8, poupar,10000)
             e()
-            t()
-
+            e(4)
+            print('O golem explode so deixando uma espada muito forte no chão')
+            e()
+            t(3.6)
+            print('Você pega a espada ')
+            e()
+            t(2)
+            espada()
+            print('\033[;1m"Dano de espada aumentado para 12"')
+          if esc == 'p': #a1
+            a1()
+            a1b()
       if esc == 'e':
-        print('voce foi par')
+        e()
+        print('Você começa a andar para a esqueda')
+        e()
+        t(1.75)
+        print('Acaba se deparando com uma sala com dois caminhos')
+        e()
+        t(3)
+        print('O caminho da direita que aparenta ser um caminho reto')
+        e()
+        t(2.5)
+        print('E o caminho da esquerda que parece ser um longo caminho')
+        esc = input('Você vai seguir por qual caminho? [e/d] ')
+        if esc == 'd':#a1
+          a1()
+          a1b()
 
+
+
+        if esc == 'e':
+         portaE('E ja se depara com outras portas.')
+          if esc == 'e':
+            portaE('Pelo que parece tem mais duas portas.')
+            if esc == 'd':
+              portaD('E ja se depara com outras portas.'))
+              if esc == 'd':
+                portaD('Pelo que parece tem mais duas portas')
+                if esc == "e":
+                  portaE
+                if esc == 'd':#a1
+                  a1()
+                  a1b()
+              if esc == 'e':#a1
+                a1()
+                a1b()
+            if esc == 'e': #a1
+            a1()
+            a1b()
+          if esc == 'd':#a1
+            a1()
+            a1b()
       if esc == 'c':
         e()
         print('Voce começa a deitar no chão lentamente,')
@@ -248,7 +378,46 @@ while vida > 0 :
         e()
         t(2.5)
         if 0 == 0:#batalha
-          monstro('Esqueleto', monstroV, nome, vida, 8, 4, poupar)
+          monstro('Esqueleto', esqueletoV, nome, vida, 8, 4, poupar,12)
+          e()
+          t(1)
+          print('Agora você ja pode prosseguir para proxima sala')
+          e()
+          t(5)
+          print('Quando chega na proxima sala você ve dois baus ')
+          e()
+          t(2)
+          esc = input('Você vai abrir o bau numero 1 ou 2? [1/2]')
+          if esc == 1 :
+            bau()
+            print('Sua mão é comido pelo baú')
+            e()
+            t(1)
+            print('Que na verdade era um monstro')
+            e()
+            t(2)
+            print('Mas desapareceu depois ')
+            e()
+            t(6)
+            morte()
+            print('Você ficou deitado sangrando ate morrer')
+            break
+          elif esc == 2:
+            bau()
+            print('Você abre o baú e acha')
+            e()
+            t(2)
+            print('Um par de luvas')
+            e()
+            r(1)
+            print('Você as equipa')
+            e()
+            t(1)
+            print('\033[;1m"Dano de socos aumentado para 12"')
+            e()
+            t(5)
+            print('O outro baú desaparece ')
+
 
     elif esc == "n":
       e()
@@ -319,7 +488,6 @@ while vida > 0 :
     e()
     print("Ja que você diz, aqui me dispeço")
     break
-
 if vida <= 0 :
   print('Seu HP chegou 0')
   e()
