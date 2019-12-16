@@ -66,8 +66,6 @@ def a1():
   print('As python bebês te soltam')
   e()
   t(3)
-
-def a1b():
   print('Você tenta correr mas ja é tarde ')
   e()
   t(3)
@@ -134,7 +132,7 @@ def a3b():
 
 
 
-def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar,qp):
+def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar,qp,dano_monstro):
   while monstroV > 0 :
     print(f'{nome_monstro}--hp: {monstroV}')
     e()
@@ -144,10 +142,9 @@ def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar,qp):
     print('1.Espada\n2.Punhos\n3.Chorar\n4.Poupar')
     e()
     esc = input('O que você ira fazer ? [e/pu/c/po] ')
-    vida = vida - random.randint(4,8)
+    vida = vida - dano_monstro
     t(1)
     if vida <= 0: 
-      print('Você morreu!!!')
       break
     elif esc == "e":
       monstroV = monstroV - espada
@@ -371,7 +368,7 @@ while vida > 0 :
             print('Você ja preparado para a luta avança')
             e()
             t(4)
-            monstro('Golem', golemV, nome, vida, 4, 8, poupar,10000)
+            monstro('Golem', golemV, nome, vida, 4, 8, poupar,10000,random.randint(8,12))
             e()
             e(4)
             print('O golem explode so deixando uma espada muito forte no chão')
@@ -384,7 +381,6 @@ while vida > 0 :
             print('\033[;1m"Dano de espada aumentado para 12"')
           if esc == 'p': #a1#morte
             a1()
-            a1b()
       if esc == 'e':
         e()
         print('Você começa a andar para a esqueda')
@@ -400,7 +396,6 @@ while vida > 0 :
         esc = input('Você vai seguir por qual caminho? [e/d] ')
         if esc == 'd':#a1#morte
           a1()
-          a1b()
         if esc == 'e':
          portaE('E ja se depara com outras portas.')
           if esc == 'e':
@@ -414,16 +409,12 @@ while vida > 0 :
                   print()
                 if esc == 'd':#a1#morte
                   a1()
-                  a1b()
               if esc == 'e':#a1#morte
                 a1()
-                a1b()
             if esc == 'e': #a1#morte
             a1()
-            a1b()
           if esc == 'd':#a1#morte
             a1()
-            a1b()
       if esc == 'c':
         e()
         print('Voce começa a deitar no chão lentamente,')
@@ -445,7 +436,7 @@ while vida > 0 :
         e()
         t(2.5)
         if 0 == 0:#batalha
-          monstro('Esqueleto', esqueletoV, nome, vida, 8, 4, poupar,12)
+          monstro('Esqueleto', esqueletoV, nome, vida, 8, 4, poupar,12,random.randint(4,8))
           e()
           t(1)
           print('Agora você ja pode prosseguir para proxima sala')
@@ -474,13 +465,15 @@ while vida > 0 :
             print('Você abre o baú e acha')
             e()
             t(2)
+            print(luvas)
+            e()
             print('Um par de luvas')
             e()
-            r(1)
+            t(1)
             print('Você as equipa')
             e()
             t(1)
-            print('\033[;1m"Dano de socos aumentado para 12"')
+            print('\033[;1m"Dano do socos aumentado de 4 para 12"')
             e()
             t(5)
             print('O outro baú desaparece ')
@@ -508,7 +501,7 @@ while vida > 0 :
         t(3.55)
         morte()
         break
-      elif esc == "soltar":
+      if esc == "soltar":
         e()
         print('Você cai bruscamente encima de um slime,')
         e()
@@ -530,20 +523,78 @@ while vida > 0 :
           e()
           print('Você se aproxima dele calmamente')
           e()
-          t(2)
+          t(3)
           print('Ele fica bem assustado por ser bem menor que você ')
           e()
-          t(2)
+          t(3)
           print('Mas mesmo assim parece gostar de você.')
           e()
+          t(6)
+          print('Você então prossegue para proxima sala, acompanhado do slime')
+          e()
+          t(4)
+          print('Você percebe que tinha monstros no final do corredor,mas')
+          e()
           t(5)
-          print('Você então prossegue')
+          print('O slime tambem estava quase la, indo enfrentar os monstros')
+          e()
+          t(4)
+          print('Então você sai correndo para protege-lo')
+          e()
+          t(6)
+          print('Quando você chega la, o slime')
+          e()
+          t(5)
+          print('Tinha afugentado os monstros')
+          e()
+          t(3)
+          print('Você aliviado, ve que na sala tem duas portas, uma da diretia e uma na esquerda')
+          e()
+          t(5)
+          esc = input('Você ira pela esquerda ou pela direita? [e/d]')
+          if esc == 'd' :
+            e()
+            t(1)
+            print('Você segue pela direita')
+            e()
+            t(3)
+            print('E acha um baú que continha')
+            e()
+            t(3)
+            print(luvas)
+            print('Um par de luvas')
+            e()
+            t(3)
+            print('continuando para a proxima sala')
+            e()
+            t(3.7)
+            print('Você ve algo que parece ser uma parede vermelha')
+            e()
+            t(4.2)
+            print('Mas quando se aproxima aquela parede se mexe e era')
+            e()
+            t(6)
+            print('Um golem de fogo enorme')
+            e()
+            t(4)
+            print('Você coloca suas luvas e se prepara para a luta')
+            e()
+            monstro('Golem de fogo', 400, nome, vida, 4, 16, poupar,100, random.randint(8,16))
+            e()
+            print('Você ve que de onde o golem veio tinha um buraco e decide entrar nele')
+            e()
+            t(4.5)
+            print('Quando você ve')
+            a3b()
+
+          if esc == 'e' :
+            a1()
         elif esc == 'm':#morte
           e()
-          print('Você tenta bater nele com sua espada,')
+          print('Você tenta bater nele com sua espada, mas')
           e()
           t(1.75)
-          print('Mas infelizmente quando encosta nele ela se derrete,')
+          print('Infelizmente quando encosta nele ela se derrete,')
           e()
           t(3)
           print('Ele pula em você')
