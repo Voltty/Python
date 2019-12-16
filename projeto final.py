@@ -130,6 +130,22 @@ def a3b():
   fim()
   break
 
+def a4():
+  print("Você sente ter algo perigoso por perto")
+  e()
+  t(7)
+  print('Quando você chega na sala, você percebe um barulho de cobra')
+  e()
+  t(4.5)
+  print('Quando olha para cima você ve um enorme phyton enrolada entre o teto')
+  e()
+  t(6)
+  print('Ela desce do teto preparando para um combate')
+  e()
+  t(4)
+  print('Mas você tambem se prepara para a luta')
+  monstro('Python',360,nome,vida,16,4,poupar,1000000,random.randint(10,14))
+
 
 
 def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar,qp,dano_monstro):
@@ -348,7 +364,7 @@ while vida > 0 :
           print('você começa a pensar por que você decidiu ficar olhando se não havia nada')
           t(2)
           esc = input('Você ira prosseguir para proxima sala ou ira ficar olhando novamente? [p/f] ')
-          if esc == 'f':
+          if esc == 'f':#a3b#win
             e()
             print('Você fica la olhando para cada canto da sala ate que...')
             e()
@@ -379,6 +395,13 @@ while vida > 0 :
             t(2)
             espada()
             print('\033[;1m"Dano de espada aumentado para 12"')
+            e()
+            t(4)
+            print('Podendo prosseguir agora para proxima sala você')
+            e()
+            t(4)
+            a4()
+            a3b()
           if esc == 'p': #a1#morte
             a1()
       if esc == 'e':
