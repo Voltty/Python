@@ -8,18 +8,20 @@ def e():
   print(' ')
 def t(p1):
   time.sleep(p1)
-def v(p):
-  print(f'Você esta com {p} de vida')
+def v():
+  print(f'Você esta com {vida} de vida')
 def errado():
   print('Essa opção não existe, escolha uma opção valida!!!')
 
 
-def a1():
+
+
+def a1(y):
   e()
   print("Você prossegue para proxima sala,")
   e()
   t(1)
-  print("Sentindo que alguma coisa foi deixada para traz.")
+  print(y)
   e()
   t(4)
   print('Seguindo para proxima sala você ve uma borboleta com um desenho de caveira nas asas, mas a ignora.')
@@ -131,8 +133,6 @@ def a3():
   e()
   t(4)
   print('Mas você tambem se prepara para a luta')
-  monstro('Python',200,nome,vida,16,4,poupar,1000000,random.randint(10,14))
-
 
 
 def a3b():
@@ -144,7 +144,7 @@ def a3b():
     print('"Você entra"')
     t(3)
 
-
+# monstro('Golem', random.randint(25,40), nome, vida, 4, 12, poupar,10000,random.randint(8,12))
 
 def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar,qp,dano_monstro):
   while monstroV >= 1 :
@@ -162,56 +162,71 @@ def monstro(nome_monstro, monstroV, nome, vida, espada, punho, poupar,qp,dano_mo
       monstroV = monstroV - espada
       print(f'Você deu {espada} de dano ')
       print(f'O {nome_monstro} deu {dano_monstro} de dano')
+      e()
       if vida <= 0: 
+        print('Você perdeu a luta')
         break
     elif esc == '2':
       monstroV = int(monstroV - punho)
       print(f'Você deu {punho} de dano ')
       print(f'O {nome_monstro} deu {dano_monstro} de dano')
+      e()
       if vida <= 0: 
+        print('Você perdeu a luta')
         break
     elif esc == '3' and vida < 100:
-      curado = random.randint(8,12)
+      curado = random.randint(12,18)
       vida = vida + curado
-      print(f'Você se curou {curado} de vida ')
+      print(f'Você curou {curado} de vida ')
       print(f'O {nome_monstro} deu {dano_monstro} de dano')
+      e()
       if vida <= 0: 
+        print('Você perdeu a luta')
         break
     elif esc == '4':
       print('Nos não precisamos lutar')
-      poupar = poupar + random.randint(1,3)
+      poupar = poupar + random.randint(10,20)
       print(f'O {nome_monstro} deu {dano_monstro} de dano')
+      e()
+      print(poupar)
       if vida <= 0: 
+        print('Você perdeu a luta')
         break
     elif poupar >= qp:
       print('O monstro entendeu seu lado e foi embora')
+      e()
       break
     elif esc == '3' and vida >= 100:
       print('Você não pode chorar no momento')
+      e()
       if vida <= 0: 
+        print('Você perdeu a luta')
         break
-    if esc == 'e' or "pu":
+    if esc == '1' or "2":
       poupar = 0
   poupar = 0
-  v(vida)
+  e()
+  return vida
 
 
 def portaE(f):
   print('Você entra na porta esquerda')
   e()
   t(2.5)
-  print(f'{f}')
+  print(f)
   e()
   t(3)
   esc = input('esquerda ou direita ? [e/d] ')
+  e()
 def portaD(f):
-  print('Você entra na porta direita')
+  print(f)
   e()
   t(2.5)
-  print(f'{f}')
+  print(f)
   e()
   t(3)
   esc = input('esquerda ou direita ? [e/d] ')
+  e()
 
 def bau():
   print('Você se aproxima do baú')
@@ -367,7 +382,7 @@ while vida >= 0 :
         t(2.5)
         esc = input('Você pode continuar para proxima sala ou ficar olhando a sala. [c/f] ')
         if esc == "c":#a1
-          a1()
+          a1("Sentindo que alguma coisa foi deixada para traz.")
         elif esc == "f":
           e()
           print('Você fica olhando cada canto da sala,')
@@ -397,16 +412,16 @@ while vida >= 0 :
             print('Você ja preparado para a luta avança ate o golem')
             e()
             t(4)
-            monstro('Golem', random.randint(25,40), nome, vida, 4, 12, poupar,10000,random.randint(8,12))
+            vida = monstro('Golem', random.randint(25,40), nome, vida, 4, 12, poupar,10000,random.randint(8,12))
             e()
-            print(vida)
             if vida <= 0 :
               break
             if vida >= 1 :
               matou()
+              v()
               e()
               t(4)
-              print('O golem explode so deixando uma espada muito forte no chão')
+              print('O golem explode so deixando uma espada aparentimente muito forte no chão')
               e()
               t(3.6)
               print('Você pega a espada ')
@@ -420,14 +435,17 @@ while vida >= 0 :
               e()
               t(4)
               a3()
+              vida = monstro('Python',130,nome,vida,16,4,poupar,1000000,random.randint(10,14))
               if vida <= 0 :
                 break
               if vida >= 1:
+                matou()
+                v()
                 a3b()
                 F()
                 break
           if esc == 'p': #a1#morte
-            a1()
+            a1("Sentindo que alguma coisa foi deixada para traz.")
       if esc == 'e':
         e()
         print('Você começa a andar para a esqueda')
@@ -440,9 +458,10 @@ while vida >= 0 :
         e()
         t(2.5)
         print('E o caminho da esquerda que parece ser um longo caminho')
+        e()
+        t(3)
         esc = input('Você vai seguir por qual caminho? [e/d] ')
-        if esc == 'd':#a1#morte
-          a1()
+        e()
         if esc == 'e':
           portaE('E ja se depara com outras portas.')
           if esc == 'e':
@@ -452,20 +471,23 @@ while vida >= 0 :
               if esc == 'd':
                 portaD('Pelo que parece tem mais duas portas')
                 if esc == "e":#a3b#FimP
-                  a3b()
+                  F()
                   break
                 if esc == 'd':#a1#morte
-                  a1()
+                  a1(' ')
                   break
               if esc == 'e':#a1#morte
-                a1()
+                a1(' ')
                 break
             if esc == 'e': #a1#morte
-              a1()
+              a1(' ')
               break
           if esc == 'd':#a1#morte
-            a1()
+            a1(' ')
             break
+        if esc == 'd':#a1#morte
+          a1(' ')
+          break
       if esc == 'c':
         e()
         print('Voce começa a deitar no chão lentamente,')
@@ -487,9 +509,9 @@ while vida >= 0 :
         e()
         t(2.5)
         if 0 == 0:#batalha
-          monstro('Esqueleto', random.randint(12,18), nome, vida, 8, 4, poupar,12,random.randint(4,8))
+          vida = monstro('Esqueleto', random.randint(12,18), nome, vida, 8, 4, poupar,50,random.randint(4,8))
           matou()
-          v(vida)
+          v()
           e()
           t(1)
           print('Agora você ja pode prosseguir para proxima sala')
@@ -621,10 +643,13 @@ while vida >= 0 :
             print('E acha um baú que continha')
             e()
             t(3)
-            print(luvas)
+            luvas()
             print('Um par de luvas')
             e()
             t(3)
+            print('\033[;1m"Dano do socos aumentado de 8 para 12"')
+            e()
+            t(4)
             print('continuando para a proxima sala')
             e()
             t(3.7)
@@ -639,18 +664,22 @@ while vida >= 0 :
             t(4)
             print('Você coloca suas luvas e se prepara para a luta')
             e()
-            monstro('Golem de fogo', 400, nome, vida, 4, 16, poupar,100, random.randint(8,16))
-            matou()
-            v(vida)
-            e()
-            print('Você ve que de onde o golem veio tinha um buraco e decide entrar nele')
-            e()
-            t(4.5)
-            print('Quando você ve')
-            F()
-            break
+            t(3)
+            vida = monstro('Golem de fogo', 400, nome, vida, 4, 16, poupar,100, random.randint(8,16))
+            if vida <= 0:
+              break
+            if vida >= 1:
+              matou()
+              v()
+              e()
+              print('Você ve que de onde o golem veio tinha um buraco e decide entrar nele')
+              e()
+              t(4.5)
+              print('Quando você ve')
+              F()
+              break
           if esc == 'e' :
-            a1()
+            a1(' ')
         if esc == 'm':#morte
           e()
           print('Você tenta bater nele com sua espada, mas')
@@ -675,7 +704,7 @@ while vida >= 0 :
     print('Adios :)')
     break
 if vida <= 0:
-  print('Sua vida chegou em zero')
+  print('Por sua vida ter chegado a zero')
   e()
-  t(6)
+  t(3)
   morte()
