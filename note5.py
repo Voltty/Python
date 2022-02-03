@@ -1,34 +1,34 @@
 import math
 
-#def imprima():
-#	resultado = 15 + 30
-#	print(resultado)
-#
-#imprima()
-#
-#def texto(frase):
-#	print('ola mundo')
-#
-#texto('ola para alguem')
-#
-#
-#def f(x):
-#	resul = x *2
-#	return resul
-#
-#print(f(5))
-#
-#if f(5) == 7:
-#	print('verdadeiro')
-#
-#
-#def soma(x,y):
-#	return x + y
-#
-#n_1 = int(input("primeiro numero: "))
-#n_2 = int(input("segundo numero: "))
-#
-#print(soma(n_1, n_2))
+def imprima():
+	resultado = 15 + 30
+	print(resultado)
+
+imprima()
+
+def texto(frase):
+	print('ola mundo')
+
+texto('ola para alguem')
+
+
+def f(x):
+	resul = x *2
+	return resul
+
+print(f(5))
+
+if f(5) == 7:
+	print('verdadeiro')
+
+
+def soma(x,y):
+	return x + y
+
+n_1 = int(input("primeiro numero: "))
+n_2 = int(input("segundo numero: "))
+
+print(soma(n_1, n_2))
 
 def conta1():
 	return 2+2
